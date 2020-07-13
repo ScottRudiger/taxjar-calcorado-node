@@ -5,7 +5,7 @@ module.exports = (apiReq) => {
 
   for (const address of nexusAddresses) {
     if (toCity.localeCompare(address.city.toUpperCase()) == 0) {
-      apiReq.nexus_addresses = address;
+      apiReq.nexus_addresses = [address];
       return apiReq
     }
     if (idx++ === nexusAddresses.length - 1 && apiReq.nexus_addresses.length > 1) {
